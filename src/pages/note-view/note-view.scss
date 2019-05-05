@@ -1,0 +1,28 @@
+page-note-view {
+    
+        ion-content {  
+            background:  url(../assets/imgs/background.jpeg) no-repeat center fixed;
+            background-size: cover;
+            &:before {
+                contain: '';
+                position: absolute;
+                top:0;
+                bottom :0;
+                right: 0;
+                left: 0;
+                background-image:linear-gradient(to bottom right, #FFA500,	rgb(145, 85, 13));
+                opacity:  .3;
+    
+    
+            }
+        }
+        .date {
+            font-weight: bold;
+            color: beige;
+            padding-right: 24px;
+            font-size: 0.8em;
+        }
+    
+    }
+    
+

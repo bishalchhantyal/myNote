@@ -6,25 +6,40 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import {AddNotePage } from '../pages/add-note/add-note';
+import { NoteService } from  '../providers/Note-Service/note-service'
+import  { IonicStorageModule } from '@ionic/storage'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NoteViewPage } from '../pages/note-view/note-view';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    AddNotePage,
+    NoteViewPage
+    
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    AddNotePage,
+    NoteViewPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    NoteService,
+    
   ]
 })
 export class AppModule {}
